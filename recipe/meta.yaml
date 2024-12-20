@@ -23,12 +23,13 @@ source:
     - patches/0009-Skip-OSX-only-failing-tests-for-now.patch
 
 build:
-  number: 1001
+  number: 1002
   skip: True  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - pkg-config
     - cmake
@@ -36,13 +37,13 @@ requirements:
     - ragel >=6.6
     - glib
     - bzip2
-    - xz
+    - liblzma-devel
     - lzo  # [linux]
     - snappy
     - zlib
   run:
     - bzip2
-    - xz
+    - liblzma-devel
     - lzo  # [linux]
     - snappy
     - zlib
@@ -58,8 +59,6 @@ test:
     - test -f ${PREFIX}/lib/libsquash{{ version_major }}.so     # [linux]
     - test -f ${PREFIX}/lib/pkgconfig/squash-{{ version_major }}.pc
     - pkg-config --cflags --libs {{ name }}-{{ version_major }}
-    - conda inspect linkages -p $PREFIX {{ name }}
-    - conda inspect objects -p $PREFIX {{ name }}  # [osx]
   files:
     - testdata.txt
 
