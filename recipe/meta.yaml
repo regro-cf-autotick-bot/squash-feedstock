@@ -45,7 +45,7 @@ requirements:
 test:
   requires:
     # We use python just to compute the md5sum of codecs output.
-    - python 3.5.*
+    - python {{ python_min }}.*
     - pkg-config
   commands:
     - test -f ${PREFIX}/include/squash-{{ version_major }}/squash/squash.h
