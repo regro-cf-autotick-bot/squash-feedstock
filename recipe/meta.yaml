@@ -33,6 +33,7 @@ requirements:
     - {{ compiler('cxx') }}
     - pkg-config
     - cmake <4
+    - make  # [linux]
   host:
     - ragel >=6.6
     - glib
