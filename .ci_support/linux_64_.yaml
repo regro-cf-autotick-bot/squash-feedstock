@@ -24,6 +24,8 @@ liblzma_devel:
 - '5'
 lzo:
 - '2'
+python_min:
+- '3.10'
 snappy:
 - '1.2'
 target_platform:

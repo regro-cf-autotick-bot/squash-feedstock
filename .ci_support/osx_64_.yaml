@@ -26,6 +26,8 @@ liblzma_devel:
 - '5'
 macos_machine:
 - x86_64-apple-darwin13.4.0
+python_min:
+- '3.10'
 snappy:
 - '1.2'
 target_platform:
