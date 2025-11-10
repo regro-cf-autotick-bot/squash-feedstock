@@ -41,12 +41,6 @@ requirements:
     - lzo  # [linux]
     - snappy
     - zlib
-  run:
-    - bzip2
-    - liblzma-devel
-    - lzo  # [linux]
-    - snappy
-    - zlib
 
 test:
   requires:
